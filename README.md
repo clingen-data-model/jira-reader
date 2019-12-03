@@ -10,16 +10,27 @@ Download from https://github.com/clingen-data-model/jira-reader
 
 ## Usage
 
-FIXME: explanation
+Either deployed in a containerized environment (see Dockerfile), or as a standalone JAR To run as a jar: 
 
-    $ java -jar jira-reader-0.1.0-standalone.jar [args]
+    $ java -jar jira-reader.jar
 
 ## Options
 
+Options are passed as environment variables. The following variables are required to be set:
 
-
-## Examples
-
+```
+JIRA_READER_USER # Username for JIRA access
+JIRA_READER_PASSWORD # Password for JIRA access
+JIRA_READER_HOST # JIRA host
+JIRA_READER_PROJECT # JIRA project
+JIRA_READER_TYPES # semicolon delimited list of types to read
+KAFKA_HOST # Kafka host
+KAFKA_USER # Kafka username
+KAFKA_PASSWORD # Kafka password
+JIRA_READER_TOPIC # Kafka topic to publish to
+JIRA_READER_BUCKET # GCS bucket to store last-queried date to
+JIRA_READER_DEFAULT_START_DATE # Default date to start query from, in absence of 
+```
 
 
 ## License
